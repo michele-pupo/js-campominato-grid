@@ -11,30 +11,37 @@
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
-// facciamo la griglia con un ciclo for
-const gridElement = document.querySelector("#grid");
-// console.log(gridElement);
 
-// creiamo la griglia 10x10
-for(let i = 0; i < 100; i++){
+const buttonElement = document.querySelector("#generate-grid");
 
-    // creo un elemtno, gli metto la classe e lo aggiungo alla griglia
-    const newElement = document.createElement("div");
-    newElement.classList.add("square");
-    // console.log(newElement);
+buttonElement.addEventListener('click', function(){
 
-    // aggiungiamo il numero in ogni elemento della griglia
-    newElement.innerText = i + 1;
+        // facciamo la griglia con un ciclo for
+        const gridElement = document.querySelector("#grid");
+        // console.log(gridElement);
 
-    // aggiungiamo un click ad ogni elemento della griglia
-    newElement.addEventListener("click", function() {
-        // console.log("click");
+        // creiamo la griglia 10x10
+        for(let i = 0; i < 100; i++){
 
-        // per sapere quale elemento è stato cliccato useremo il "this"
-        // console.log(this);
-        this.classList.toggle("active");
-        console.log(this.innerText);
-    })
+            // creo un elemtno, gli metto la classe e lo aggiungo alla griglia
+            const newElement = document.createElement("div");
+            newElement.classList.add("square");
+            // console.log(newElement);
 
-    gridElement.append(newElement);
-}
+            // aggiungiamo il numero in ogni elemento della griglia
+            newElement.innerText = i + 1;
+
+            // aggiungiamo un click ad ogni elemento della griglia
+            newElement.addEventListener("click", function() {
+                // console.log("click");
+
+                // per sapere quale elemento è stato cliccato useremo il "this"
+                // console.log(this);
+                this.classList.toggle("active");
+                console.log(this.innerText);
+            })
+
+            gridElement.append(newElement);
+        }
+    }
+)
