@@ -33,6 +33,18 @@ buttonElement.addEventListener('click', function(){
         // inizialmente la griglia non avrà dimensione
         gridElement.innerHTML = "";
 
+         // Aggiungo una classe per l'impaginazione in base alla dimensione scelta
+         if (choiceDifficulty === 7) {
+            gridElement.classList.add("small-grid");
+            gridElement.classList.remove("medium-grid", "#grid");
+        } else if (choiceDifficulty === 9) {
+            gridElement.classList.add("medium-grid");
+            gridElement.classList.remove("small-grid", "large-grid");
+        } else if (choiceDifficulty === 10) {
+            gridElement.classList.add("#grid");
+            gridElement.classList.remove("small-grid", "medium-grid");
+        }
+
         // creiamo la griglia scelta dall'utente
         for(let i = 0; i < gridSize; i++){
 

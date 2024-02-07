@@ -12,25 +12,27 @@
      <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container-fluid d-flex flex-column align-items-center mt-5 col-10">
-        <h1 class="display-2 fw-bold text-info text-uppercase">Campo minato</h1>
-        <div class="m-auto d-flex justify-content-between align-items-baseline gap-5">
-            <div>
-                <label for="difficulty-select">Seleziona la difficoltà:</label>
-                <select id="difficulty-select">
-                    <option value="10">Facile</option>
-                    <option value="9">Medio</option>
-                    <option value="7">Difficile</option>
-                </select>
-            </div>
-            <div class="button">
-                <button id="generate-grid">Genera griglia</button>
+    <div class="my_container">
+        <div class="container-fluid d-flex flex-column align-items-center mt-5 col-10">
+            <h1 class="display-2 fw-bold text-info text-uppercase">Campo minato</h1>
+            <div class="m-auto d-flex justify-content-between align-items-baseline gap-5">
+                <div>
+                    <label for="difficulty-select">Seleziona la difficoltà:</label>
+                    <select id="difficulty-select">
+                        <option value="10">Facile</option>
+                        <option value="9">Medio</option>
+                        <option value="7">Difficile</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <button id="generate-grid">Genera griglia</button>
+                </div>
             </div>
         </div>
     </div>
     <div  class="container m-auto mt-5 d-flex justify-content-center">
         <div style="display: none;" id="grid" class="row col-6">
-            <div class="square">
+            <div class="square col">
             </div>
         </div>
     </div>
