@@ -17,6 +17,9 @@ const buttonElement = document.querySelector("#generate-grid");
 // al click del pulsante la griglia viene generata in base alla difficoltà scelta
 buttonElement.addEventListener('click', function(){
 
+        // cambio la visualizzazione della grid al click   
+        document.querySelector("#grid").style.display = "flex";
+
         //creo una variabile che prenda il grado di difficoltà scelto dall'utente 
         const choiceDifficulty = parseInt(document.getElementById("difficulty-select").value);
 
