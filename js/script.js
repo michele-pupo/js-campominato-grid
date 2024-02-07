@@ -23,13 +23,17 @@ for(let i = 0; i < 100; i++){
     newElement.classList.add("square");
     // console.log(newElement);
 
+    // aggiungiamo il numero in ogni elemento della griglia
+    newElement.innerText = i + 1;
+
     // aggiungiamo un click ad ogni elemento della griglia
     newElement.addEventListener("click", function() {
         // console.log("click");
 
         // per sapere quale elemento è stato cliccato useremo il "this"
         // console.log(this);
-        this.classList.add("active");
+        this.classList.toggle("active");
+        console.log(this.innerText);
     })
 
     gridElement.append(newElement);
