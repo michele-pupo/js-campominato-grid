@@ -11,19 +11,29 @@
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
-
+// creo la costante per il button
 const buttonElement = document.querySelector("#generate-grid");
 
+// al click del pulsante la griglia viene generata in base alla difficoltà scelta
 buttonElement.addEventListener('click', function(){
 
-        // facciamo la griglia con un ciclo for
+        //creo una variabile che prenda il grado di difficoltà scelto dall'utente 
+        const choiceDifficulty = parseInt(document.getElementById("difficulty-select").value);
+
+        // creo una costante che prenda il valore della difficoltà e lo moltiplichi per se stesso per generare la griglia scelta
+        const gridSize = choiceDifficulty * choiceDifficulty;
+
+        // creiamo la griglia con un ciclo for
         const gridElement = document.querySelector("#grid");
         // console.log(gridElement);
 
-        // creiamo la griglia 10x10
-        for(let i = 0; i < 100; i++){
+        // inizialmente la griglia non avrà dimensione
+        gridElement.innerHTML = "";
 
-            // creo un elemtno, gli metto la classe e lo aggiungo alla griglia
+        // creiamo la griglia scelta dall'utente
+        for(let i = 0; i < gridSize; i++){
+
+            // creo un elemento, gli metto la classe e lo aggiungo alla griglia
             const newElement = document.createElement("div");
             newElement.classList.add("square");
             // console.log(newElement);
