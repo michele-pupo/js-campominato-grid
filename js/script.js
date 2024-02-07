@@ -13,14 +13,24 @@
 
 // facciamo la griglia con un ciclo for
 const gridElement = document.querySelector("#grid");
-console.log(gridElement);
+// console.log(gridElement);
 
 // creiamo la griglia 10x10
 for(let i = 0; i < 100; i++){
 
+    // creo un elemtno, gli metto la classe e lo aggiungo alla griglia
     const newElement = document.createElement("div");
     newElement.classList.add("square");
     // console.log(newElement);
 
-    gridElement.append(newElement)
+    // aggiungiamo un click ad ogni elemento della griglia
+    newElement.addEventListener("click", function() {
+        // console.log("click");
+
+        // per sapere quale elemento è stato cliccato useremo il "this"
+        // console.log(this);
+        this.classList.add("active");
+    })
+
+    gridElement.append(newElement);
 }
